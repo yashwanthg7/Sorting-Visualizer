@@ -1,1 +1,1 @@
-# Sorting-Visualizer
+# checkpoint-sorting-visualizer-template
