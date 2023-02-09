@@ -89,6 +89,9 @@ function createNewArray(noOfBars = 60) {
 
     // create an array of random numbers 
     array = [];
+    // for(let i=0;i<arraySize;i++){
+    //     array.push(Math.floor(Math.random() * 6) + 1);
+    // }
     // select the div #bars element
     const bars = document.querySelector("#bars");
 
