@@ -87,20 +87,25 @@ function createNewArray(noOfBars = 60) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
-    // create an array of random numbers 
-    array = [];
-    // for(let i=0;i<arraySize;i++){
-    //     array.push(Math.floor(Math.random() * 6) + 1);
-    // }
+    array = Array(100) .fill().map(() => 100 * Math.random());
+    
     // select the div #bars element
     const bars = document.querySelector("#bars");
 
     // create multiple element div using loop and adding class 'bar col'
     for (let i = 0; i < noOfBars; i++) {
         //create element
+        let element = document.createElement('div');
         // update height of bar
+        element.classList.add("bar-col");
+        element.style.height = `${array[i]}%`;
+        
+        bars.appendChild(element);
         // add appropriate styling class to the element
+        
         // add element to the DOM by appending to the div #bars
+        
+        
     }
 }
 
@@ -112,6 +117,7 @@ function deleteChild() {
 
 // Selecting newarray button from DOM and adding eventlistener
 const newArray = document.querySelector(".newArray");
+
 newArray.addEventListener("click", function(){
     console.log("From newArray " + arraySize.value);
     console.log("From newArray " + delay);
