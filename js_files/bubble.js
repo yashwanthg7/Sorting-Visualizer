@@ -2,6 +2,7 @@ async function bubble() {
     console.log('In bubbe()');
     const ele = document.querySelectorAll(".bar");
     //write your code here
+    
 }
 
 const bubSortbtn = document.querySelector(".bubbleSort");

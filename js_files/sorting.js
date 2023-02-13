@@ -10,20 +10,20 @@ function swap(el1, el2) {
 
 // Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSortingBtn(){
-    document.querySelector(".bubbleSort").disabled = true;
-    document.querySelector(".insertionSort").disabled = true;
-    document.querySelector(".mergeSort").disabled = true;
-    document.querySelector(".quickSort").disabled = true;
-    document.querySelector(".selectionSort").disabled = true;
+    document.querySelector("#bubbleSort").disabled = true;
+    document.querySelector("#insertionSort").disabled = true;
+    document.querySelector("#mergeSort").disabled = true;
+    document.querySelector("#quickSort").disabled = true;
+    document.querySelector("#selectionSort").disabled = true;
 }
 
 // Enables sorting buttons used in conjunction with disable
 function enableSortingBtn(){
-    document.querySelector(".bubbleSort").disabled = false;
-    document.querySelector(".insertionSort").disabled = false;
-    document.querySelector(".mergeSort").disabled = false;
-    document.querySelector(".quickSort").disabled = false;
-    document.querySelector(".selectionSort").disabled = false;
+    document.querySelector("#bubbleSort").disabled = false;
+    document.querySelector("#insertionSort").disabled = false;
+    document.querySelector("#mergeSort").disabled = false;
+    document.querySelector("#quickSort").disabled = false;
+    document.querySelector("#selectionSort").disabled = false;
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -38,12 +38,12 @@ function enableSizeSlider(){
 
 // Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableNewArrayBtn(){
-    document.querySelector(".newArray").disabled = true;
+    document.querySelector("#newArray").disabled = true;
 }
 
 // Enables newArray buttons used in conjunction with disable
 function enableNewArrayBtn(){
-    document.querySelector(".newArray").disabled = false;
+    document.querySelector("#newArray").disabled = false;
 }
 
 // Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
@@ -77,7 +77,7 @@ delayElement.addEventListener('input', function(){
 let array = [];
 
 // Call to display bars right when you visit the site
-createNewArray();
+createNewArray(arraySize.value);
 
 // To create new array input size of array
 /**
@@ -116,7 +116,7 @@ function deleteChild() {
 }
 
 // Selecting newarray button from DOM and adding eventlistener
-const newArray = document.querySelector(".newArray");
+const newArray = document.querySelector("#newArray");
 
 newArray.addEventListener("click", function(){
     console.log("From newArray " + arraySize.value);
