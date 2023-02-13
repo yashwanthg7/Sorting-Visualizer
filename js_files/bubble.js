@@ -4,7 +4,12 @@ async function bubble() {
     //write your code here
     console.log(ele);
     for (let i = 0; i < ele.length; i++) {
-        for (let j = 0; j < ele.length-i-1; j++) {
+        for (let j = 0; j < ele.length - i - 1; j++) {
+            ele[j].style.background = "red";
+            ele[j + 1].style.background = "red";
+            await waitforme(delay);
+
+
             let style1 = window.getComputedStyle(ele[j]);
             let style2 = window.getComputedStyle(ele[j + 1]);
 
@@ -12,12 +17,17 @@ async function bubble() {
             let transform2 = style2.getPropertyValue("height");
 
             if (parseInt(transform1) > parseInt(transform2)) {
-            
+
                 ele[j].style.height = transform2;
                 ele[j + 1].style.height = transform1;
-
+                ele[j].style.background = 'cyan';
+                
             }
+            ele[j].style.background = 'cyan';
+            ele[j+1].style.background = "rgb(185, 185, 23)";
+
         }
+        
     }
 
 
