@@ -4,7 +4,7 @@
 
  async function selection(){
     console.log('In selection()');
-    const ele = document.querySelectorAll(".bar");
+    const ele = document.querySelectorAll(".bar-col");
     for(let i = 0; i < ele.length; i++){
         console.log('In ith loop');
         let min_index = i;
@@ -38,7 +38,7 @@
     }
 }
 
-const selectionSortbtn = document.querySelector(".selectionSort");
+const selectionSortbtn = document.querySelector("#selectionSort");
 selectionSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();

@@ -23,7 +23,7 @@ async function mergeSort(ele, l, r){
     await merge(ele, l, m, r);
 }
 
-const mergeSortbtn = document.querySelector(".mergeSort");
+const mergeSortbtn = document.querySelector("#mergeSort");
 mergeSortbtn.addEventListener('click', async function(){
     let ele = document.querySelectorAll('.bar');
     let l = 0;
