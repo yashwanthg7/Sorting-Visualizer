@@ -5,8 +5,8 @@ async function bubble() {
     console.log(ele);
     for (let i = 0; i < ele.length; i++) {
         for (let j = 0; j < ele.length - i - 1; j++) {
-            ele[j].style.background = "red";
-            ele[j + 1].style.background = "red";
+            ele[j].style.background = 'blue';
+            ele[j+1].style.background = 'blue';
             await waitforme(delay);
 
 
@@ -24,12 +24,14 @@ async function bubble() {
                 
             }
             ele[j].style.background = 'cyan';
-            ele[j+1].style.background = "rgb(185, 185, 23)";
+            ele[j+1].style.background = 'cyan';
+
 
         }
+        ele[ele.length-1-i].style.background = 'rgb(185, 185, 23)';
         
     }
-
+    ele[0].style.background = 'rgb(185, 185, 23)';
 
 }
 

@@ -8,6 +8,72 @@ async function merge(ele, low, mid, high){
     let left = new Array(n1);
     let right = new Array(n2);
     //write your code here
+    for(let i = 0; i < n1; i++){
+        await waitforme(delay);
+        ele[low + i].style.background = 'orange';
+        left[i] = ele[low + i].style.height;
+    }
+    for(let i = 0; i < n2; i++){
+        await waitforme(delay);
+        ele[mid + 1 + i].style.background = 'yellow';
+        right[i] = ele[mid + 1 + i].style.height;
+    }
+    await waitforme(delay);
+    let i = 0, j = 0, k = low;
+    while(i < n1 && j < n2){
+        await waitforme(delay);
+        if(parseInt(left[i]) <= parseInt(right[j])){
+            console.log('In merge while loop if');
+            // color
+            if((n1 + n2) === ele.length){
+                ele[k].style.background = 'rgb(185, 185, 23)';
+            }
+            else{
+                ele[k].style.background = 'rgb(185, 185, 23,0.8)';
+            }
+            
+            ele[k].style.height = left[i];
+            i++;
+            k++;
+        }
+        else{
+
+            if((n1 + n2) === ele.length){
+                ele[k].style.background = 'rgb(185, 185, 23)';
+            }
+            else{
+                ele[k].style.background = 'rgb(185, 185, 23,0.8)';
+            } 
+            ele[k].style.height = right[j];
+            j++;
+            k++;
+        }
+    }
+    while(i < n1){
+        await waitforme(delay);
+        if((n1 + n2) === ele.length){
+            ele[k].style.background = 'rgb(185, 185, 23)';
+        }
+        else{
+            ele[k].style.background = 'rgb(185, 185, 23,0.8)';
+        }
+        ele[k].style.height = left[i];
+        i++;
+        k++;
+    }
+    while(j < n2){
+        await waitforme(delay);
+        if((n1 + n2) === ele.length){
+            ele[k].style.background = 'rgb(185, 185, 23)';
+        }
+        else{
+            ele[k].style.background = 'rgb(185, 185, 23,0.8)';
+        }
+        ele[k].style.height = right[j];
+        j++;
+        k++;
+    }
+        
 }
 
 async function mergeSort(ele, l, r){
@@ -25,7 +91,7 @@ async function mergeSort(ele, l, r){
 
 const mergeSortbtn = document.querySelector("#mergeSort");
 mergeSortbtn.addEventListener('click', async function(){
-    let ele = document.querySelectorAll('.bar');
+    let ele = document.querySelectorAll('.bar-col');
     let l = 0;
     let r = parseInt(ele.length) - 1;
     disableSortingBtn();
